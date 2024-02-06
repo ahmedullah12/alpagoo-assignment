@@ -65,27 +65,27 @@ const Weather = () => {
             </p>
             <p className="flex items-center gap-1 text-lg">
                 <TiWeatherCloudy/>
-                Description: {weatherData.weather[0].description}
+                <span className='font-bold'>Description:</span> {weatherData.weather[0].description}
             </p>
           </div>
           <div className='flex items-center gap-4 my-3'>
             <p className="flex items-center gap-1 text-lg">
                 <TiThermometer/>
-                Feels like: {weatherData.main.feels_like}°C
+                <span className='font-bold'>Feels like:</span> {weatherData.main.feels_like}°C
             </p>
             <p className="flex items-center gap-1 text-lg">
                 <TiWeatherShower/>
-                Humidity: {weatherData.main.humidity}%
+                <span className='font-bold'>Humidity:</span> {weatherData.main.humidity}%
             </p>
           </div>
           <div className='flex items-center gap-4 my-3'>
             <p className="flex items-center gap-1 text-lg">
                 <TiArrowUp/>
-                Pressure: {weatherData.main.pressure}
+                <span className='font-bold'>Pressure:</span> {weatherData.main.pressure}
             </p>
             <p className="flex items-center gap-1 text-lg">
                 <FaWind/>
-                Wind Speed : {weatherData.wind.speed}m/s
+                <span className='font-bold'>Wind Speed :</span> {weatherData.wind.speed}m/s
             </p>
           </div>
         </>

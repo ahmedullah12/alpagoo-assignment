@@ -6,7 +6,7 @@ import toast from 'react-hot-toast';
 
 const SignUp = () => {
     const {register, handleSubmit, formState: {errors}} = useForm();
-    const {signUpWithEmail,googleSignIn} = useContext(AuthContext);
+    const {signUpWithEmail,googleSignIn, updateUser} = useContext(AuthContext);
     const [signUpError, setSignUpError] = useState();
     const navigate = useNavigate();
 
@@ -16,8 +16,12 @@ const SignUp = () => {
         signUpWithEmail(data.email, data.password)
         .then(res => {
             if(res.user.uid){
-                toast.success("Account Created Successfully");
-                navigate('/');
+                updateUser(data.name)
+                .then(() => {
+                    toast.success("Account Created Successfully");
+                    navigate('/');
+                })
+                .then(error => console.log(error))
             }
         })
         .catch(err => {

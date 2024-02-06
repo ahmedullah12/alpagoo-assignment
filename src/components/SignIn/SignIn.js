@@ -16,6 +16,7 @@ const SignIn = () => {
         loginWithEmail(data.email, data.password)
         .then(res => {
           navigate(from, {replace: true});
+          console.log(res.user);
         })
         .catch(err => {
           console.log(err.message);
