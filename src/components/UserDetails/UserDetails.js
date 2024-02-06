@@ -19,7 +19,7 @@ const UserDetails = () => {
     });
 
     if(isLoading){
-        return <p>Loading...</p>
+        return <p className='text-center'>Loading...</p>
     }
     return (
         <div className='w-full md:w-[80%] lg:w-[70%] mx-auto border px-4 py-2'>

@@ -5,7 +5,7 @@ import { FaWind } from "react-icons/fa";
 import toast from 'react-hot-toast';
 
 const Weather = () => {
-    const [city, setCity] = useState('delhi');
+    const [city, setCity] = useState('Delhi');
     const [weatherData, setWeatherData] = useState(null);
 
     const apikey  = process.env.REACT_APP_WEATHER_API_KEY;
@@ -59,32 +59,32 @@ const Weather = () => {
           <h2 className='text-xl font-bold'>City: {weatherData.name}</h2>
           <div className='flex items-center gap-4 my-3'>
             <p className="flex items-center gap-1 text-lg">
-                <TiThermometer/>
+                <TiThermometer color='orange'/>
                 <span className='font-bold'>Temp:</span> 
                 {weatherData.main.temp}°C
             </p>
             <p className="flex items-center gap-1 text-lg">
-                <TiWeatherCloudy/>
+                <TiWeatherCloudy color='lightblue'/>
                 <span className='font-bold'>Description:</span> {weatherData.weather[0].description}
             </p>
           </div>
           <div className='flex items-center gap-4 my-3'>
             <p className="flex items-center gap-1 text-lg">
-                <TiThermometer/>
+                <TiThermometer color='orange'/>
                 <span className='font-bold'>Feels like:</span> {weatherData.main.feels_like}°C
             </p>
             <p className="flex items-center gap-1 text-lg">
-                <TiWeatherShower/>
+                <TiWeatherShower color='blue'/>
                 <span className='font-bold'>Humidity:</span> {weatherData.main.humidity}%
             </p>
           </div>
           <div className='flex items-center gap-4 my-3'>
             <p className="flex items-center gap-1 text-lg">
-                <TiArrowUp/>
+                <TiArrowUp color='red'/>
                 <span className='font-bold'>Pressure:</span> {weatherData.main.pressure}
             </p>
             <p className="flex items-center gap-1 text-lg">
-                <FaWind/>
+                <FaWind color='lightgreen'/>
                 <span className='font-bold'>Wind Speed :</span> {weatherData.wind.speed}m/s
             </p>
           </div>
