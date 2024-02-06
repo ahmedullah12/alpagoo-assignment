@@ -46,7 +46,7 @@ const Weather = () => {
             <p className='mb-4 text-center text-2xl font-bold'>Weather Report</p>
             <form onSubmit={handleSubmit}>
                 <input type="text" placeholder="Enter city name"
-                 className="input input-bordered input-primary w-full"
+                 className="input input-bordered input-accent w-full"
                  value={city}
                  onChange={handleInputChange} />
                 <div className='flex justify-center'>

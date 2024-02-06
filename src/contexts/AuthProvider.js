@@ -35,6 +35,21 @@ const AuthProvider = ({children}) => {
         return signOut(auth)
     };
 
+    const saveUser = (name, email) =>{
+        const user = {name, email};
+        fetch('http://localhost:5000/users', {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify(user)
+        })
+        .then(res => res.json())
+        .then(data => {
+        })
+        .catch(err => {})
+    }
+
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser);
@@ -46,7 +61,7 @@ const AuthProvider = ({children}) => {
 
 
     const authInfo = {
-        signUpWithEmail, loginWithEmail, googleSignIn, logOut,updateUser, user, loading
+        signUpWithEmail, loginWithEmail, googleSignIn, logOut,updateUser,saveUser, user, loading
     }
     return (
         <AuthContext.Provider value={authInfo}>
