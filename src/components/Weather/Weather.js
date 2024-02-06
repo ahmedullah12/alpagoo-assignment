@@ -41,7 +41,6 @@ const Weather = () => {
         fetchWeatherData();
       };
 
-    console.log(weatherData);
     return (
         <div className='mx-auto w-[300px] md:w-[400px] py-5'>
             <p className='mb-4 text-center text-2xl font-bold'>Weather Report</p>
